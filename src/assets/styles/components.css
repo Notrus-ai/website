@@ -1,0 +1,96 @@
+/* Custom Component Classes using @apply */
+
+@layer components {
+  /* Button Variants */
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-opacity hover:opacity-90;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-opacity hover:opacity-90;
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 rounded-lg font-semibold border-2 transition-colors;
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  /* Card Variants */
+  .card-elevated {
+    @apply rounded-xl shadow-lg p-6 border;
+    background-color: var(--card);
+    border-color: var(--border);
+    color: var(--card-foreground);
+  }
+
+  .card-flat {
+    @apply rounded-lg p-4 border;
+    background-color: var(--card);
+    border-color: var(--border);
+    color: var(--card-foreground);
+  }
+
+  /* Text Styles */
+  .text-gradient {
+    @apply bg-clip-text;
+    background-image: linear-gradient(
+      to right,
+      var(--primary),
+      var(--secondary)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+
+  /* Container Styles */
+  .container-centered {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Input Styles */
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2;
+    background-color: var(--background);
+    color: var(--foreground);
+    border: 1px solid var(--input);
+  }
+
+  .input-field:focus {
+    box-shadow: 0 0 0 2px var(--ring);
+  }
+
+  .results-content {
+    display: grid;
+    grid-template-areas:
+      "result1 result2"
+      "result1 result3";
+    gap: 1rem;
+  }
+
+  .results-content__area-1 {
+    grid-area: result1;
+  }
+
+  .results-content__area-2 {
+    grid-area: result2;
+  }
+
+  .results-content__area-3 {
+    grid-area: result3;
+  }
+}
