@@ -6,7 +6,7 @@ function Navigation() {
     useCarousel()
 
   return (
-    <div className="navigation">
+    <div className="navigation flex justify-center">
       <button
         className="nav-arrow"
         onClick={prevPage}
@@ -48,7 +48,7 @@ export default function Carousel({ images, renderItem }) {
         <CarouselRAW
           className="carousel"
           items={images.map(renderItem)}
-          gap={32}
+          gap={16}
           snap="page"
           loop={false}
         >
