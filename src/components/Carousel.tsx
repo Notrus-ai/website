@@ -41,7 +41,12 @@ function Navigation() {
   )
 }
 
-export default function Carousel({ images, renderItem }) {
+type CarouselProps<T> = {
+  images: T[]
+  renderItem: (item: T) => React.ReactNode
+}
+
+export default function Carousel<T>({ images, renderItem }: CarouselProps<T>) {
   return (
     <article>
       <div className="carousel-container">
