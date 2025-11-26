@@ -15,27 +15,29 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex-1 flex gap-4">
-            <ul className="flex-1 group">
+            {/* <ul className="flex-1 group">
               <li><h4 className="font-bold pb-2">Produto</h4></li>
               <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Chat com IA</Link></li>
               <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Automação de Voz</Link></li>
               <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Omnichannel</Link></li>
               <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Análises</Link></li>
-            </ul>
-            <ul className="flex-1 group">
+            </ul> */}
+            <ul className="flex-1 group [&>li>a]:p-1 [&>li>a]:block">
               <li><h4 className="font-bold pb-2">Empresa</h4></li>
-              <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Casos de Sucesso</Link></li>
+              <li><Link href="/pt/insights" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Insights</Link></li>
+              <li><Link href="/pt/contato" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Contato</Link></li>
+              {/* <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Casos de Sucesso</Link></li>
               <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Segurança</Link></li>
               <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Setores</Link></li>
-              <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Contato</Link></li>
+              <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Contato</Link></li> */}
             </ul>
           </div>
         </div>
         <div className="flex justify-between pt-8 flex-wrap gap-2">
           <p className="order-2 md:order-1">Notrus © 2024. Todos os direitos reservados.</p>
           <ul className="flex gap-4 group order-1">
-            <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Política de Privacidade</Link></li>
-            <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Termos de Serviço</Link></li>
+            <li><Link href="/pt/politica-privacidade" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Política de Privacidade</Link></li>
+            {/* <li><Link href="#" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Termos de Serviço</Link></li> */}
           </ul>
         </div>
       </div>

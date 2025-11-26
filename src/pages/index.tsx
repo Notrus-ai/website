@@ -16,6 +16,7 @@ import SecurityCard from './-components/SecurityCard';
 import Image from 'next/image';
 import logo from '@/assets/images/logo-white.svg';
 import getNotrus from '@/assets/images/dashboard/get-notrus.png';
+import Link from 'next/link';
 
 const WHY_NOTRUS_DATA = [
   {
@@ -42,18 +43,22 @@ const WHY_NOTRUS_DATA = [
 
 const SECURITY_DATA = [
   {
+    icon: 'sec-1',
     title: 'Segurança de Dados',
     description: 'Criptografia AES-128/256 de ponta a ponta para todos os dados do cliente em trânsito e em repouso.',
   },
   {
+    icon: 'sec-2',
     title: 'Controle de Acesso',
     description: 'SSO, MFA, acesso baseado em funções e registros de auditoria para supervisão completa da segurança.',
   },
   {
+    icon: 'sec-3',
     title: 'Proteção de Dados',
     description: 'Auditorias regulares, testes de penetração e conformidade com GDPR/LGPD.',
   },
   {
+    icon: 'sec-4',
     title: 'Cibersegurança',
     description: 'Medidas de segurança contra falhas de código, injeção e envenenamento de dados.',
   }
@@ -76,9 +81,15 @@ export default function Home() {
 
       <main className="overflow-x-clip">
         <section id="hero" className="relative container mx-auto">
-          <figure className="absolute z-10 top-8 left-8 md:top-12 md:left-20 xl:left-24 2xl:left-30 2xl:top-16">
-            <Image src={logo} alt="Notrus Logo" width={150} />
-          </figure>
+          <div className="flex justify-between items-center w-full absolute z-10 top-8 pl-6 pr-8 md:pr-20 xl:pr-30 2xl:pr-32 md:top-12 md:pl-20 xl:pl-24 2xl:pl-26 2xl:top-16">
+            <figure>
+              <Image src={logo} alt="Notrus Logo" width={120} />
+            </figure>
+            <ul className="flex [&>li>a]:p-4 [&>li>a]:hover:bg-white/10 [&>li>a]:rounded-xl text-white font-medium">
+              <li><Link href="/pt/insights" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Insights</Link></li>
+              <li><Link href="/pt/contato" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">Contato</Link></li>
+            </ul>
+          </div>
           <div className="hidden md:block m-[-20]">{HeroAnimation}</div>
           <div className="md:hidden m-[-8]">{HeroAnimationMobile}</div>
           <div className="flex w-full justify-center absolute bottom-8 z-10 md:bottom-8 lg:bottom-16 xl:bottom-24 md:justify-start md:pl-10 lg:pl-16 xl:pl-20 2xl:pl-24">
