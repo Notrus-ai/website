@@ -12,47 +12,47 @@
 
 
 /* Light Mode (Default) */
-:root {
+/* :root { */
   /* Base colors */
-  --background: #ffffff;
+  /* --background: #ffffff;
   --foreground: #0f172a;
   --muted: #f8fafc;
-  --muted-foreground: #64748b;
+  --muted-foreground: #64748b; */
 
   /* Notrus Brand Colors */
-  --notrus-blue-900: #0a3d7a;
+  /* --notrus-blue-900: #0a3d7a;
   --notrus-blue-800: #1e5ba8;
   --notrus-blue-700: #2d6ab8;
   --notrus-blue-600: #4a90d9;
   --notrus-blue-500: #5da3e8;
   --notrus-teal: #5fb5a8;
   --notrus-cyan: #7dd3c0;
-  --notrus-purple: #7b68ee;
+  --notrus-purple: #7b68ee; */
 
   /* Semantic colors */
-  --primary: var(--notrus-blue-800);
+  /* --primary: var(--notrus-blue-800);
   --primary-foreground: #ffffff;
   --secondary: var(--notrus-teal);
   --secondary-foreground: #ffffff;
   --accent: var(--notrus-cyan);
-  --accent-foreground: var(--notrus-blue-900);
+  --accent-foreground: var(--notrus-blue-900); */
 
   /* UI colors */
-  --card: #ffffff;
+  /* --card: #ffffff;
   --card-foreground: var(--foreground);
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --ring: var(--notrus-blue-600);
+  --ring: var(--notrus-blue-600); */
 
   /* Status colors */
-  --success: #10b981;
+  /* --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
-  --info: var(--notrus-blue-600);
-}
+  --info: var(--notrus-blue-600); */
+/* } */
 
 /* Dark Mode */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) { */
   :root {
     /* Notrus Brand Colors (adjusted for dark mode) */
     --notrus-blue-900: #5da3e8;
@@ -94,7 +94,7 @@
     --muted: #1e293b;
     --muted-foreground: #94a3b8;
   }
-}
+/* } */
 
 /* Tailwind v4 Theme */
 @theme {

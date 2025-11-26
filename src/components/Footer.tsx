@@ -11,7 +11,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold pb-2">Notrus</h3>
             <p>Transforme a experiência do seu cliente com agentes de IA que oferecem suporte excepcional em todos os canais. Transforme a experiência do seu cliente com agentes de IA que oferecem suporte excepcional em todos os canais.</p>
             <div className="pt-8 pb-2 flex justify-center md:justify-start">
-              <Button>Agende uma demonstração</Button>
+              <Button href="/pt/contato">Agende uma demonstração</Button>
             </div>
           </div>
           <div className="flex-1 flex gap-4">

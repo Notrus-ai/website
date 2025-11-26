@@ -66,9 +66,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Notrus - AI-Powered Platform for Modern Teams</title>
-        <meta name="description" content="Transform your workflow with Notrus - the AI-powered platform built for modern teams" />
+        <title>Notrus AI</title>
+        <meta name="description" content="Automatize seu atendimento ao cliente com inteligência artificial." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="automação de atendimento ao cliente,inteligência artificial,IA para suporte,chatbot para negócios,atendimento automatizado,WhatsApp Business,suporte via chat,reduzir custos operacionais,Notrus AI,suporte ao consumidor,automação de atendimento ao cliente,atendimento digital" />
       </Head>
 
       {/* <Header /> */}
@@ -81,7 +82,7 @@ export default function Home() {
           <div className="hidden md:block m-[-20]">{HeroAnimation}</div>
           <div className="md:hidden m-[-8]">{HeroAnimationMobile}</div>
           <div className="flex w-full justify-center absolute bottom-8 z-10 md:bottom-8 lg:bottom-16 xl:bottom-24 md:justify-start md:pl-10 lg:pl-16 xl:pl-20 2xl:pl-24">
-            <Button>Agende uma demonstração</Button>
+            <Button href="/pt/contato">Agende uma demonstração</Button>
           </div>
         </section>
 
@@ -133,7 +134,6 @@ export default function Home() {
               {SECURITY_DATA.map((item, index) => (<SecurityCard key={index} {...item} />))}
             </div>
           </div>
-
         </section>
 
         <section id="get-demo" className="container mx-auto">
@@ -142,7 +142,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold md:text-4xl 2xl:text-6xl">Pronto para transformar suas operações de atendimento ao cliente em grande escala?</h2>
               <p className="text-xl pt-4 pb-16 md:pb-20 md:text-2xl 2xl:text-3xl">Junte-se aos líderes de mercado que confiam na Notrus para gerenciar suas operações de atendimento ao cliente em escala empresarial</p>
               <div className="flex justify-center md:justify-start">
-                <Button>Agende uma demonstração</Button>
+                <Button href="/pt/contato">Agende uma demonstração</Button>
               </div>
             </div>
             <div className="flex justify-end flex-1 absolute right-4 opacity-[25%] lg:relative">
