@@ -2332,6 +2332,18 @@ loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-react@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/lottie-react/-/lottie-react-2.4.1.tgz#4bd3f2a8a5e48edbd43c05ca5080fdd50f049d31"
+  integrity sha512-LQrH7jlkigIIv++wIyrOYFLHSKQpEY4zehPicL9bQsrt1rnoKRYCYgpCUe5maqylNtacy58/sQDZTkwMcTRxZw==
+  dependencies:
+    lottie-web "^5.10.2"
+
+lottie-web@^5.10.2:
+  version "5.13.0"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.13.0.tgz#441d3df217cc8ba302338c3f168e1a3af0f221d3"
+  integrity sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ==
+
 lru-cache@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-5.1.1.tgz#1da27e6710271947695daf6848e847f01d84b920"
@@ -2388,6 +2400,23 @@ motion-dom@^12.23.23:
   resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.23.23.tgz#8f874333ea1a04ee3a89eb928f518b463d589e0e"
   integrity sha512-n5yolOs0TQQBRUFImrRfs/+6X4p3Q4n1dUEqt/H58Vx7OW6RF+foWEgmTVDhIWJIMXOuNNL0apKH2S16en9eiA==
   dependencies:
+    motion-utils "^12.23.6"
+
+motion-plus-dom@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/motion-plus-dom/-/motion-plus-dom-2.0.2.tgz#fee074ea8e8913d8c13c5e69e21ae5822271bdca"
+  integrity sha512-0NbPge5o89jqu1ArhdSTZYj0clM1bepIMhkUrpVvXhJPg+FOwH5RWv6B+7tuYF8uOGFCFoesK+rNX1OX3B96Iw==
+  dependencies:
+    motion "^12.23.24"
+    motion-dom "^12.23.23"
+    motion-utils "^12.23.6"
+
+"motion-plus@https://api.motion.dev/registry?package=motion-plus&version=2.0.2&token=716a069e6a56f5b9410263d83cc93d4e69097b2e96b812d10f5cebf521a4951e":
+  version "2.0.2"
+  resolved "https://api.motion.dev/registry?package=motion-plus&version=2.0.2&token=716a069e6a56f5b9410263d83cc93d4e69097b2e96b812d10f5cebf521a4951e#b2d7674b3619823aa1c900a44d632ff74b2f3bc5"
+  dependencies:
+    motion "^12.23.24"
+    motion-plus-dom "^2.0.2"
     motion-utils "^12.23.6"
 
 motion-utils@^12.23.6:

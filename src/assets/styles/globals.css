@@ -1,5 +1,15 @@
 @import "tailwindcss";
 @import "./components.css";
+@import "./dashboard.css";
+
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
+
 
 /* Light Mode (Default) */
 :root {
@@ -55,6 +65,7 @@
     --notrus-purple: #9d8bff;
     --notrus-tangaroa: #001b40;
     --notrus-black-pearl: #00040a;
+    --notrus-tropical-rain-forest: #007266;
 
     /* Semantic colors */
     --primary: var(--notrus-blue-800);
@@ -257,14 +268,10 @@
   --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
   --shadow-glow-lg: 0 0 40px rgba(59, 130, 246, 0.6);
 
-  /* Typography */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }

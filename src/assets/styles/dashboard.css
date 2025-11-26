@@ -1,0 +1,30 @@
+@layer components {
+  .results-content {
+    display: grid;
+    grid-template-areas:
+      "result1"
+      "result2"
+      "result3";
+    gap: 1.5rem;
+  }
+
+  .results-content__area-1 {
+    grid-area: result1;
+  }
+
+  .results-content__area-2 {
+    grid-area: result2;
+  }
+
+  .results-content__area-3 {
+    grid-area: result3;
+  }
+
+  @media (width >= theme(--breakpoint-md)) {
+    .results-content {
+      grid-template-areas:
+        "result1 result2"
+        "result1 result3";
+    }
+  }
+}

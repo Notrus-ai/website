@@ -9,11 +9,11 @@ type WhyCardItemProps = {
 export default function WhyCardItem({ title, description, image }: WhyCardItemProps) {
   return (
     <div 
-      className="flex flex-col relative p-8 rounded-2xl snap-center shrink-0 w-[450px] h-[448px] ml-4 overflow-hidden bg-cover bg-center"
+      className="flex flex-col relative p-8 rounded-2xl w-[calc(100vw-2rem)] h-[calc(100vw-2rem)] md:w-[450px] md:h-[448px] overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${image.src})` }}
     >
-      <div className="relative z-10 w-[55%]">
-        <h3 className="text-2xl font-bold">{title}</h3>
+      <div className="w-[80%]">
+        <h3 className="text-xl md:text-2xl font-bold mb-2">{title}</h3>
         <p>{description}</p>
       </div>
     </div>

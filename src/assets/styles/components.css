@@ -58,6 +58,10 @@
   }
 
   /* Container Styles */
+  .container {
+    @apply p-4;
+  }
+
   .container-centered {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
@@ -72,25 +76,5 @@
 
   .input-field:focus {
     box-shadow: 0 0 0 2px var(--ring);
-  }
-
-  .results-content {
-    display: grid;
-    grid-template-areas:
-      "result1 result2"
-      "result1 result3";
-    gap: 1rem;
-  }
-
-  .results-content__area-1 {
-    grid-area: result1;
-  }
-
-  .results-content__area-2 {
-    grid-area: result2;
-  }
-
-  .results-content__area-3 {
-    grid-area: result3;
   }
 }
