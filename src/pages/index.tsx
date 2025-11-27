@@ -19,6 +19,7 @@ import logo from '@/assets/images/logo-white.svg';
 import getNotrus from '@/assets/images/dashboard/get-notrus.png';
 import Link from 'next/link';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import useExternalLinks from '@/hooks/useExternalLinks';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
@@ -79,6 +80,7 @@ export default function Home() {
   const { View: HeroAnimation } = useLottie({ animationData: heroAnimation, loop: true });
   const { View: HeroAnimationMobile } = useLottie({ animationData: heroAnimationMobile, loop: true });
 
+  const { getExternalUrl } = useExternalLinks();
   return (
     <>
       <Head>
@@ -95,15 +97,15 @@ export default function Home() {
               <Image src={logo} alt="Notrus Logo" width={120} />
             </figure>
             <ul className="flex items-center [&>li>a]:p-4 [&>li>a]:hover:bg-white/10 [&>li>a]:rounded-xl text-white font-medium">
-              <li><Link href="/insights" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('header.insights')}</Link></li>
-              <li><Link href="/contact" className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('header.contact')}</Link></li>
+              <li><Link href={getExternalUrl('resources')} className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('header.insights')}</Link></li>
+              <li><Link href={getExternalUrl('contact')} className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('header.contact')}</Link></li>
               <li><LanguageSwitcher /></li>
             </ul>
           </div>
           <div className="hidden md:block m-[-20]">{HeroAnimation}</div>
           <div className="md:hidden m-[-8]">{HeroAnimationMobile}</div>
           <div className="flex w-full justify-center absolute bottom-8 z-10 md:bottom-8 lg:bottom-16 xl:bottom-24 md:justify-start md:pl-10 lg:pl-16 xl:pl-20 2xl:pl-24">
-            <Button href="/contact">{t('hero.cta')}</Button>
+            <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
           </div>
         </section>
 
@@ -163,7 +165,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold md:text-4xl 2xl:text-6xl">{t('getDemo.title')}</h2>
               <p className="text-xl pt-4 pb-16 md:pb-20 md:text-2xl 2xl:text-3xl">{t('getDemo.subtitle')}</p>
               <div className="flex justify-center md:justify-start">
-                <Button href="/contact">{t('getDemo.cta')}</Button>
+                <Button href={getExternalUrl('contact')}>{t('getDemo.cta')}</Button>
               </div>
             </div>
             <div className="flex justify-end flex-1 absolute right-4 opacity-[25%] lg:relative">
