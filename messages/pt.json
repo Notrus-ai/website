@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "title": "Notrus AI",
+    "description": "Automatize seu atendimento ao cliente com inteligência artificial.",
+    "keywords": "automação de atendimento ao cliente,inteligência artificial,IA para suporte,chatbot para negócios,atendimento automatizado,WhatsApp Business,suporte via chat,reduzir custos operacionais,Notrus AI,suporte ao consumidor,automação de atendimento ao cliente,atendimento digital"
+  },
+  "header": {
+    "insights": "Insights",
+    "contact": "Contato"
+  },
+  "hero": {
+    "cta": "Agende uma demonstração"
+  },
+  "whyUs": {
+    "title": "Por que grandes empresas escolhem a Notrus?",
+    "subtitle": "Uma plataforma corporativa projetada para performance, personalização e segurança em escala.",
+    "items": {
+      "resultsDriven": {
+        "title": "Solução Orientada a Resultados",
+        "description": "Focamos em impacto real. Ajudamos sua empresa a aumentar receita, reduzir custos e acelerar eficiência operacional com tecnologia aplicada ao negócio."
+      },
+      "hyperpersonalization": {
+        "title": "Hiperpersonalização em Escala",
+        "description": "Segmentamos cada cliente da sua base, analisando comportamento, histórico e contexto para oferecer interações verdadeiramente únicas em larga escala."
+      },
+      "integration": {
+        "title": "Integração Sem Fricção",
+        "description": "A Notrus é 100% agnóstica. Conecta-se aos sistemas que você já usa, sem necessidade de migração ou substituição de infraestrutura."
+      },
+      "security": {
+        "title": "Segurança e Conformidade Corporativa",
+        "description": "Criptografia avançada, controle de acesso granular e total conformidade com LGPD, GDPR e padrões globais de segurança."
+      }
+    }
+  },
+  "results": {
+    "title": "Resultados que se adaptam à sua operação",
+    "revenue": {
+      "value": "25%",
+      "title": "Crescimento de Receita",
+      "description": "Através de uma maior conversão e valor médio das encomendas"
+    },
+    "csat": {
+      "value": "75%",
+      "title": "Maior CSAT",
+      "description": "Impulsionado por respostas mais rápidas e precisas"
+    },
+    "costs": {
+      "value": "60%",
+      "title": "Redução de Custos",
+      "description": "Economias médias em custos operacionais"
+    }
+  },
+  "security": {
+    "title": "Segurança de nível empresarial",
+    "subtitle": "Construído com segurança e privacidade de dados como princípios fundamentais, com recursos integrados de conformidade e segurança de nível empresarial.",
+    "items": {
+      "dataSecurity": {
+        "title": "Segurança de Dados",
+        "description": "Criptografia AES-128/256 de ponta a ponta para todos os dados do cliente em trânsito e em repouso."
+      },
+      "accessControl": {
+        "title": "Controle de Acesso",
+        "description": "SSO, MFA, acesso baseado em funções e registros de auditoria para supervisão completa da segurança."
+      },
+      "dataProtection": {
+        "title": "Proteção de Dados",
+        "description": "Auditorias regulares, testes de penetração e conformidade com GDPR/LGPD."
+      },
+      "cybersecurity": {
+        "title": "Cibersegurança",
+        "description": "Medidas de segurança contra falhas de código, injeção e envenenamento de dados."
+      }
+    }
+  },
+  "getDemo": {
+    "title": "Pronto para transformar suas operações de atendimento ao cliente em grande escala?",
+    "subtitle": "Junte-se aos líderes de mercado que confiam na Notrus para gerenciar suas operações de atendimento ao cliente em escala empresarial",
+    "cta": "Agende uma demonstração"
+  },
+  "footer": {
+    "description": "Transforme a experiência do seu cliente com agentes de IA que oferecem suporte excepcional em todos os canais. Transforme a experiência do seu cliente com agentes de IA que oferecem suporte excepcional em todos os canais.",
+    "cta": "Agende uma demonstração",
+    "company": "Empresa",
+    "insights": "Insights",
+    "contact": "Contato",
+    "copyright": "Notrus © 2024. Todos os direitos reservados.",
+    "privacyPolicy": "Política de Privacidade"
+  }
+}

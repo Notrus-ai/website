@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "title": "Notrus AI",
+    "description": "Automate your customer service with artificial intelligence.",
+    "keywords": "customer service automation,artificial intelligence,AI for support,business chatbot,automated service,WhatsApp Business,chat support,reduce operational costs,Notrus AI,consumer support,customer service automation,digital service"
+  },
+  "header": {
+    "insights": "Insights",
+    "contact": "Contact"
+  },
+  "hero": {
+    "cta": "Schedule a demo"
+  },
+  "whyUs": {
+    "title": "Why do large companies choose Notrus?",
+    "subtitle": "A corporate platform designed for performance, personalization, and security at scale.",
+    "items": {
+      "resultsDriven": {
+        "title": "Results-Driven Solution",
+        "description": "We focus on real impact. We help your company increase revenue, reduce costs, and accelerate operational efficiency with technology applied to business."
+      },
+      "hyperpersonalization": {
+        "title": "Hyperpersonalization at Scale",
+        "description": "We segment each customer in your base, analyzing behavior, history, and context to deliver truly unique interactions at scale."
+      },
+      "integration": {
+        "title": "Frictionless Integration",
+        "description": "Notrus is 100% agnostic. It connects to the systems you already use, without the need for migration or infrastructure replacement."
+      },
+      "security": {
+        "title": "Corporate Security and Compliance",
+        "description": "Advanced encryption, granular access control, and full compliance with LGPD, GDPR, and global security standards."
+      }
+    }
+  },
+  "results": {
+    "title": "Results that adapt to your operation",
+    "revenue": {
+      "value": "25%",
+      "title": "Revenue Growth",
+      "description": "Through higher conversion and average order value"
+    },
+    "csat": {
+      "value": "75%",
+      "title": "Higher CSAT",
+      "description": "Driven by faster and more accurate responses"
+    },
+    "costs": {
+      "value": "60%",
+      "title": "Cost Reduction",
+      "description": "Average savings in operational costs"
+    }
+  },
+  "security": {
+    "title": "Enterprise-grade security",
+    "subtitle": "Built with data security and privacy as core principles, with integrated compliance features and enterprise-grade security.",
+    "items": {
+      "dataSecurity": {
+        "title": "Data Security",
+        "description": "End-to-end AES-128/256 encryption for all customer data in transit and at rest."
+      },
+      "accessControl": {
+        "title": "Access Control",
+        "description": "SSO, MFA, role-based access, and audit logs for complete security oversight."
+      },
+      "dataProtection": {
+        "title": "Data Protection",
+        "description": "Regular audits, penetration testing, and GDPR/LGPD compliance."
+      },
+      "cybersecurity": {
+        "title": "Cybersecurity",
+        "description": "Security measures against code failures, injection, and data poisoning."
+      }
+    }
+  },
+  "getDemo": {
+    "title": "Ready to transform your customer service operations at scale?",
+    "subtitle": "Join market leaders who trust Notrus to manage their enterprise-scale customer service operations",
+    "cta": "Schedule a demo"
+  },
+  "footer": {
+    "description": "Transform your customer experience with AI agents that deliver exceptional support across all channels. Transform your customer experience with AI agents that deliver exceptional support across all channels.",
+    "cta": "Schedule a demo",
+    "company": "Company",
+    "insights": "Insights",
+    "contact": "Contact",
+    "copyright": "Notrus © 2024. All rights reserved.",
+    "privacyPolicy": "Privacy Policy"
+  }
+}

@@ -3,21 +3,25 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
+  i18n: {
+    locales: ['pt', 'en'],
+    defaultLocale: 'pt',
+  },
   async redirects() {
     return [
       {
-        source: '/pt/contato',
-        destination: 'https://old.notrus.ai/pt/contato',
+        source: '/contact',
+        destination: 'https://hub.notrus.ai/pt/contato',
         permanent: false,
       },
       {
-        source: '/pt/insights',
-        destination: 'https://old.notrus.ai/pt/insights',
+        source: '/insights',
+        destination: 'https://hub.notrus.ai/pt/insights',
         permanent: false,
       },
       {
-        source: '/pt/politica-privacidade',
-        destination: 'https://old.notrus.ai/pt/politica-privacidade',
+        source: '/privacy-policy',
+        destination: 'https://hub.notrus.ai/pt/politica-privacidade',
         permanent: false,
       },
     ];
