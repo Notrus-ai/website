@@ -1,25 +1,31 @@
-import Head from 'next/head';
-import { useLottie } from "lottie-react";
 import { GetStaticPropsContext } from 'next';
-import { useTranslations } from 'next-intl';
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useLocale, useTranslations } from 'next-intl';
+import { useLottie } from "lottie-react";
 
+import getNotrus from '@/assets/images/dashboard/get-notrus.png';
 import why1Image from '@/assets/images/dashboard/why-1.png';
 import why2Image from '@/assets/images/dashboard/why-2.png';
 import why3Image from '@/assets/images/dashboard/why-3.png';
 import why4Image from '@/assets/images/dashboard/why-4.png';
-import WhyCardItem from './-components/WhyCardItem';
+import logo from '@/assets/images/logo-white.svg';
+import heroAnimationPT from '@/assets/hero-animation-pt.json';
+import heroAnimationMobilePT from '@/assets/hero-animation-mobile-pt.json';
+import heroAnimationEN from '@/assets/hero-animation-en.json';
+import heroAnimationMobileEN from '@/assets/hero-animation-mobile-en.json';
+
+import useExternalLinks from '@/hooks/useExternalLinks';
+
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Button from '@/components/Button';
 import Footer from '@/components/Footer';
-import heroAnimation from '@/assets/hero-animation.json';
-import heroAnimationMobile from '@/assets/hero-animation-mobile.json';
 import Carousel from '@/components/Carousel';
-import SecurityCard from './-components/SecurityCard';
-import Image from 'next/image';
-import logo from '@/assets/images/logo-white.svg';
-import getNotrus from '@/assets/images/dashboard/get-notrus.png';
-import Link from 'next/link';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-import useExternalLinks from '@/hooks/useExternalLinks';
+
+import WhyCardItem from '@/components/home/WhyCardItem';
+import SecurityCard from '@/components/home/SecurityCard';
+import AboutSection from '@/components/home/about';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
@@ -30,6 +36,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
 }
 
 export default function Home() {
+  const locale = useLocale() as 'en' | 'pt';
   const t = useTranslations();
 
   const WHY_NOTRUS_DATA = [
@@ -77,8 +84,10 @@ export default function Home() {
       description: t('security.items.cybersecurity.description'),
     }
   ];
-  const { View: HeroAnimation } = useLottie({ animationData: heroAnimation, loop: true });
-  const { View: HeroAnimationMobile } = useLottie({ animationData: heroAnimationMobile, loop: true });
+  const { View: HeroAnimation } = useLottie({ animationData: locale === 'en' ? heroAnimationEN : heroAnimationPT, loop: true });
+  const { View: HeroAnimationMobile } = useLottie({ animationData: locale === 'en' ? heroAnimationMobileEN : heroAnimationMobilePT, loop: true });
+  // const { View: HeroAnimationEN } = useLottie({ animationData: heroAnimationEN, loop: true });
+  // const { View: HeroAnimationMobileEN } = useLottie({ animationData: heroAnimationMobileEN, loop: true });
 
   const { getExternalUrl } = useExternalLinks();
   return (
@@ -108,6 +117,8 @@ export default function Home() {
             <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
           </div>
         </section>
+
+        <AboutSection />
 
         <section id="why-us" className="py-8 md:py-16">
           <div className="container mx-auto">

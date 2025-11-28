@@ -11,6 +11,44 @@
   "hero": {
     "cta": "Agende uma demonstração"
   },
+  "about": {
+    "title": "Uma plataforma.",
+    "titleHighlight": "Três camadas de inteligência.",
+    "subtitle": "A Notrus unifica os dados do cliente, automatiza o engajamento em todos os pontos de contato, do site ao WhatsApp, e aprende com cada interação para gerar resultados.",
+    "sphere": {
+      "title": "Notrus Sphere",
+      "description": "Conecte e centralize todos os dados do cliente, de CRMs, ERPs, sites e apps, em um único sistema inteligente que fornece contexto para cada interação."
+    },
+    "orbit": {
+      "title": "Notrus Orbit",
+      "description": "Automatize jornadas de engajamento omnichannel com comunicações personalizadas via WhatsApp, e-mail, SMS e notificações push."
+    },
+    "insights": {
+      "title": "Notrus Insights",
+      "description": "Obtenha análises avançadas com IA para entender padrões de comportamento, prever demanda e otimizar cada etapa da jornada do cliente."
+    },
+    "sources": {
+      "website": "Website",
+      "app": "App",
+      "crm": "CRM",
+      "erp": "ERP",
+      "chatVoice": "Chat e Voz",
+      "social": "Redes sociais"
+    },
+    "userProfile": {
+      "title": "User profile",
+      "interests": "Interesses",
+      "interestsValue": "SUVs compactos",
+      "journey": "Jornada",
+      "journeyValue": "Em comparação",
+      "engagement": "Engajamento",
+      "engagementValue": "Alto",
+      "leadScore": "Lead Score",
+      "leadScoreValue": "82/100",
+      "suggestedAction": "Ação sugerida",
+      "suggestedActionValue": "Enviar oferta personalizada"
+    }
+  },
   "whyUs": {
     "title": "Por que grandes empresas escolhem a Notrus?",
     "subtitle": "Uma plataforma corporativa projetada para performance, personalização e segurança em escala.",

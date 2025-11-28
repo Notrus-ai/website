@@ -11,6 +11,44 @@
   "hero": {
     "cta": "Schedule a demo"
   },
+  "about": {
+    "title": "One platform.",
+    "titleHighlight": "Three layers of intelligence.",
+    "subtitle": "Notrus unifies customer data, automates engagement across all touchpoints from website to WhatsApp, and learns from each interaction to drive results.",
+    "sphere": {
+      "title": "Notrus Sphere",
+      "description": "Connect and centralize all customer data from CRMs, ERPs, websites and apps into a single intelligent system that provides context for every interaction."
+    },
+    "orbit": {
+      "title": "Notrus Orbit",
+      "description": "Automate omnichannel engagement journeys with personalized communications via WhatsApp, email, SMS and push notifications."
+    },
+    "insights": {
+      "title": "Notrus Insights",
+      "description": "Get AI-powered advanced analytics to understand behavior patterns, predict demand and optimize every step of the customer journey."
+    },
+    "sources": {
+      "website": "Website",
+      "app": "App",
+      "crm": "CRM",
+      "erp": "ERP",
+      "chatVoice": "Chat & Voice",
+      "social": "Social media"
+    },
+    "userProfile": {
+      "title": "User profile",
+      "interests": "Interests",
+      "interestsValue": "Compact SUVs",
+      "journey": "Journey",
+      "journeyValue": "Comparison",
+      "engagement": "Engagement",
+      "engagementValue": "High",
+      "leadScore": "Lead Score",
+      "leadScoreValue": "82/100",
+      "suggestedAction": "Suggested action",
+      "suggestedActionValue": "Send personalized offer"
+    }
+  },
   "whyUs": {
     "title": "Why do large companies choose Notrus?",
     "subtitle": "A corporate platform designed for performance, personalization, and security at scale.",
