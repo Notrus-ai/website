@@ -86,8 +86,6 @@ export default function Home() {
   ];
   const { View: HeroAnimation } = useLottie({ animationData: locale === 'en' ? heroAnimationEN : heroAnimationPT, loop: true });
   const { View: HeroAnimationMobile } = useLottie({ animationData: locale === 'en' ? heroAnimationMobileEN : heroAnimationMobilePT, loop: true });
-  // const { View: HeroAnimationEN } = useLottie({ animationData: heroAnimationEN, loop: true });
-  // const { View: HeroAnimationMobileEN } = useLottie({ animationData: heroAnimationMobileEN, loop: true });
 
   const { getExternalUrl } = useExternalLinks();
   return (

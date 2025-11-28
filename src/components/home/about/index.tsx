@@ -110,7 +110,6 @@ export default function AboutSection() {
           </div>
 
           <div className={`flex-1 ${ACCORDIONS_ITEMS[openItem].bgColor} rounded-2xl p-6 md:p-12 lg:p-16 relative overflow-hidden`}>
-            <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-white/10 to-transparent" />
             <figure>
               <Image src={ACCORDIONS_ITEMS[openItem].image} alt={t(`about.${openItem}.title`)} />
             </figure>
