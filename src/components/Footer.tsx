@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { useTranslations } from 'next-intl';
+import { FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 import useExternalLinks from "@/hooks/useExternalLinks";
 
@@ -30,7 +32,19 @@ export default function Footer() {
         </div>
         <div className="flex justify-between pt-8 flex-wrap gap-2">
           <p className="order-2 md:order-1">{t('copyright')}</p>
-          <ul className="flex gap-4 group order-1">
+          <ul className="flex gap-4 group order-1 items-center">
+            <li>
+              <Link href={getExternalUrl('linkedin')} target="_blank" rel="noopener noreferrer" className="group-hover:opacity-50 hover:opacity-100! transition-opacity flex items-center gap-2">
+                <FaLinkedin className="text-xl text-[#0A66C2]" />
+                LinkedIn
+              </Link>
+            </li>
+            <li>
+              <Link href={getExternalUrl('contact')} className="group-hover:opacity-50 hover:opacity-100! transition-opacity flex items-center gap-2">
+                <MdEmail className="text-xl text-[#4A90D9]" />
+                Email
+              </Link>
+            </li>
             <li><Link href={getExternalUrl('privacyPolicy')} className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('privacyPolicy')}</Link></li>
           </ul>
         </div>

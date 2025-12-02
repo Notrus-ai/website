@@ -1,5 +1,5 @@
 type Locale = 'en' | 'pt';
-export type ExternalLink = Record<'contact' | 'resources' | 'privacyPolicy', string>;
+export type ExternalLink = Record<'contact' | 'resources' | 'privacyPolicy' | 'linkedin', string>;
 type ExternalLinks = {
   [key in Locale]: ExternalLink;
 }
@@ -9,10 +9,12 @@ export const externalLinks: ExternalLinks = {
     contact: 'https://hub.notrus.ai/en/contact',
     resources: 'https://hub.notrus.ai/en/resources',
     privacyPolicy: 'https://hub.notrus.ai/en/privacy-policy',
+    linkedin: 'https://www.linkedin.com/company/notrus-ai-international'
   },
   'pt': {
     contact: 'https://hub.notrus.ai/pt/contato',
     resources: 'https://hub.notrus.ai/pt/insights',
     privacyPolicy: 'https://hub.notrus.ai/pt/politica-privacidade',
+    linkedin: 'https://www.linkedin.com/company/notrus-ai-international'
   }
 }
