@@ -15,6 +15,6 @@ export const externalLinks: ExternalLinks = {
     contact: 'https://hub.notrus.ai/pt/contato',
     resources: 'https://hub.notrus.ai/pt/insights',
     privacyPolicy: 'https://hub.notrus.ai/pt/politica-privacidade',
-    linkedin: 'https://www.linkedin.com/company/notrus-ai-international'
+    linkedin: 'https://www.linkedin.com/company/notrus-ai'
   }
 }

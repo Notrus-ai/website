@@ -1,26 +1,32 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import sphereImage from "@/assets/images/dashboard/sphere.png";
 import orbitImage from "@/assets/images/dashboard/orbit.png";
 import insightsImage from "@/assets/images/dashboard/insights.png";
+import sphereImagePT from "@/assets/images/dashboard/sphere-pt.png";
+import orbitImagePT from "@/assets/images/dashboard/orbit-pt.png";
+import insightsImagePT from "@/assets/images/dashboard/insights-pt.png";
 
 type AccordionItemKey = 'sphere' | 'orbit' | 'insights';
 
-const ACCORDIONS_ITEMS: Record<AccordionItemKey, { bgColor: string, image: StaticImageData }> = {
+const ACCORDIONS_ITEMS: Record<AccordionItemKey, { bgColor: string, imageEN: StaticImageData, imagePT: StaticImageData }> = {
   sphere: {
     bgColor: 'bg-[#01252e]',
-    image: sphereImage,
+    imageEN: sphereImage,
+    imagePT: sphereImagePT,
   },
   orbit: {
     bgColor: 'bg-[#3b1a37]',
-    image: orbitImage,
+    imageEN: orbitImage,
+    imagePT: orbitImagePT,
   },
   insights: {
     bgColor: 'bg-[#01193e]',
-    image: insightsImage,
+    imageEN: insightsImage,
+    imagePT: insightsImagePT,
   },
 };
 
@@ -59,6 +65,7 @@ function AccordionItem({
 }
 
 export default function AboutSection() {
+  const locale = useLocale() as 'en' | 'pt';
   const t = useTranslations();
   const [openItem, setOpenItem] = useState<AccordionItemKey>('sphere');
 
@@ -111,7 +118,7 @@ export default function AboutSection() {
 
           <div className={`flex-1 ${ACCORDIONS_ITEMS[openItem].bgColor} rounded-2xl p-6 md:p-12 lg:p-16 relative overflow-hidden`}>
             <figure>
-              <Image src={ACCORDIONS_ITEMS[openItem].image} alt={t(`about.${openItem}.title`)} />
+              <Image src={ACCORDIONS_ITEMS[openItem][locale === 'pt' ? 'imagePT' : 'imageEN']} alt={t(`about.${openItem}.title`)} />
             </figure>
           </div>
         </div>
