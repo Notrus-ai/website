@@ -1,6 +1,5 @@
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { useLottie } from "lottie-react";
@@ -10,7 +9,6 @@ import why1Image from '@/assets/images/dashboard/why-1.png';
 import why2Image from '@/assets/images/dashboard/why-2.png';
 import why3Image from '@/assets/images/dashboard/why-3.png';
 import why4Image from '@/assets/images/dashboard/why-4.png';
-import logo from '@/assets/images/logo-white.svg';
 import heroAnimationPT from '@/assets/hero-animation-pt.json';
 import heroAnimationMobilePT from '@/assets/hero-animation-mobile-pt.json';
 import heroAnimationEN from '@/assets/hero-animation-en.json';
@@ -18,7 +16,6 @@ import heroAnimationMobileEN from '@/assets/hero-animation-mobile-en.json';
 
 import useExternalLinks from '@/hooks/useExternalLinks';
 
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Button from '@/components/Button';
 import Footer from '@/components/Footer';
 import Carousel from '@/components/Carousel';
@@ -26,6 +23,7 @@ import Carousel from '@/components/Carousel';
 import WhyCardItem from '@/components/home/WhyCardItem';
 import SecurityCard from '@/components/home/SecurityCard';
 import AboutSection from '@/components/home/about';
+import Header from '@/components/Header';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
@@ -97,18 +95,10 @@ export default function Home() {
         <meta name="keywords" content={t('metadata.keywords')} />
       </Head>
 
+      <Header />
+
       <main className="overflow-x-clip">
         <section id="hero" className="relative container mx-auto">
-          <div className="flex justify-between items-center w-full absolute z-10 top-8 pl-6 pr-8 md:pr-20 xl:pr-30 2xl:pr-32 md:top-12 md:pl-20 xl:pl-24 2xl:pl-26 2xl:top-16">
-            <figure>
-              <Image src={logo} alt="Notrus Logo" width={120} />
-            </figure>
-            <ul className="flex items-center [&>li>a]:p-4 [&>li>a]:hover:bg-white/10 [&>li>a]:rounded-xl text-white font-medium">
-              <li><Link href={getExternalUrl('resources')} className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('header.insights')}</Link></li>
-              <li><Link href={getExternalUrl('contact')} className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('header.contact')}</Link></li>
-              <li><LanguageSwitcher /></li>
-            </ul>
-          </div>
           <div className="hidden md:block m-[-20]">{HeroAnimation}</div>
           <div className="md:hidden m-[-8]">{HeroAnimationMobile}</div>
           <div className="flex w-full justify-center absolute bottom-8 z-10 md:bottom-8 lg:bottom-16 xl:bottom-24 md:justify-start md:pl-10 lg:pl-16 xl:pl-20 2xl:pl-24">
