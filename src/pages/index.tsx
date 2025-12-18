@@ -111,8 +111,8 @@ export default function Home() {
         <section id="why-us" className="py-8 md:py-16">
           <div className="container mx-auto">
             <div className="md:w-[50%] mx-auto text-center pb-8">
-              <h2 className="text-3xl md:text-6xl font-bold">{t('whyUs.title')}</h2>
-              <p>{t('whyUs.subtitle')}</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">{t('whyUs.title')}</h2>
+              <p className="text-base md:text-xl 2xl:text-2xl pt-4 text-gray-300">{t('whyUs.subtitle')}</p>
             </div>
             <div>
               <Carousel images={WHY_NOTRUS_DATA} renderItem={(item) => <WhyCardItem {...item} />} />
@@ -122,7 +122,7 @@ export default function Home() {
 
         <section id="results" className="container mx-auto py-8 md:py-24">
           <div className="md:w-[50%] mx-auto text-center pb-8">
-            <h2 className="text-3xl md:text-6xl font-bold">{t('results.title')}</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">{t('results.title')}</h2>
           </div>
           <div className="results-content">
             <div className="flex flex-col justify-between md:justify-end results-content__area-1 rounded-xl p-4 md:p-8 bg-[url(/images/dashboard/results-1.png)] bg-cover bg-center min-h-[220px]">
@@ -146,8 +146,8 @@ export default function Home() {
         <section id="security" className="container mx-auto">
           <div className="mt-8 md:mt-16 md:p-16 rounded-xl md:bg-[url(/images/dashboard/security.png)] bg-cover bg-center">
             <div className="md:w-[43%] text-center md:text-left">
-              <h2 className="text-3xl md:text-6xl font-bold">{t('security.title')}</h2>
-              <p className="text-xl md:text-3xl pt-4 pb-8 md:pb-20">{t('security.subtitle')}</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">{t('security.title')}</h2>
+              <p className="text-xl md:text-2xl pt-4 pb-8 md:pb-20">{t('security.subtitle')}</p>
             </div>
             <div className="lg:hidden">
               <Carousel images={SECURITY_DATA} renderItem={(item: typeof SECURITY_DATA[0]) => <SecurityCard {...item} />} />
@@ -161,7 +161,7 @@ export default function Home() {
         <section id="get-demo" className="container mx-auto">
           <div className="flex items-center justify-between rounded-xl relative p-4 md:p-16 my-16 md:my-32 bg-cover bg-[radial-gradient(circle_at_top_left,#0066FF,#001a4d)]">
             <div className="flex-1">
-              <h2 className="text-2xl font-bold md:text-4xl 2xl:text-6xl">{t('getDemo.title')}</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">{t('getDemo.title')}</h2>
               <p className="text-xl pt-4 pb-16 md:pb-20 md:text-2xl 2xl:text-3xl">{t('getDemo.subtitle')}</p>
               <div className="flex justify-center md:justify-start">
                 <Button href={getExternalUrl('contact')}>{t('getDemo.cta')}</Button>

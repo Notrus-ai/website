@@ -101,7 +101,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row gap-8">
           <div className="flex flex-col gap-4 lg:w-[35%]">
             {accordionItems.map((item) => (
               <AccordionItem
