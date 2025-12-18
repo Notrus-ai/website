@@ -42,9 +42,9 @@ export default function Header() {
 
   return (
     <>
-      <header className={`flex items-center w-full fixed z-10 pl-6 pr-8 lg:pr-20 xl:pr-30 2xl:pr-32 md:pl-12 lg:pl-20 xl:pl-24 2xl:pl-26 transition-all duration-300 ${isScrolled ? 'top-0 bg-black/80 backdrop-blur-md' : 'top-8 md:top-12 2xl:top-16'}`}>
+      <header className={`flex items-center w-full fixed z-10 pl-6 pr-4 md:pl-11 lg:pl-16 xl:pl-30 2xl:pl-26 lg:pr-12 xl:pr-30 2xl:pr-32 transition-all duration-300 ${isScrolled ? 'top-0 bg-black/80 backdrop-blur-md' : 'top-8 md:top-12 2xl:top-16'}`}>
         <div className="container mx-auto">
-          <div className="lg:pl-24 lg:pr-16 flex justify-between items-center">
+          <div className="xl:pl-16 xl:pr-16 flex justify-between items-center">
             <figure>
               <Image src={logo} alt="Notrus Logo" width={120} />
             </figure>
