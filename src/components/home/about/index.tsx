@@ -90,7 +90,6 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-12 md:py-24">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="md:w-[70%] lg:w-[60%] mx-auto text-center pb-12 md:pb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
             {t('about.title')}
@@ -116,7 +115,7 @@ export default function AboutSection() {
             ))}
           </div>
 
-          <div className={`flex-1 ${ACCORDIONS_ITEMS[openItem].bgColor} rounded-2xl p-6 md:p-12 lg:p-16 relative overflow-hidden`}>
+          <div className={`flex-1 ${ACCORDIONS_ITEMS[openItem].bgColor} rounded-2xl relative overflow-hidden`}>
             <figure>
               <Image src={ACCORDIONS_ITEMS[openItem][locale === 'pt' ? 'imagePT' : 'imageEN']} alt={t(`about.${openItem}.title`)} />
             </figure>
