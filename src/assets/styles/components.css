@@ -1,5 +1,9 @@
 /* Custom Component Classes using @apply */
 
+.hero-bg {
+  background: radial-gradient(ellipse at 60% 20%, #3b62e8 0%, #1a3bb5 45%, #0c1a5a 100%);
+}
+
 @layer components {
   /* Button Variants */
   .btn-primary {

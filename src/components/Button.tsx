@@ -11,7 +11,7 @@ export default function Button({
   href,
   onClick
 }: ButtonProps) {
-  const className = "!px-4 !py-2 bg-white rounded-3xl text-blue-500 font-medium hover:cursor-pointer hover:bg-white";
+  const className = "px-5 py-3 bg-white rounded-4xl text-blue-500 font-medium cursor-pointer transition-all duration-200 hover:bg-blue-50 hover:shadow-lg hover:scale-[1.03] active:scale-[0.97] active:bg-blue-100 active:shadow-none";
   
   if (href) {
     return (
