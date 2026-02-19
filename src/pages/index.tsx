@@ -96,20 +96,20 @@ export default function Home() {
           <Header />
           <div className="flex items-center container mx-auto md:[&>aside]:flex-1 flex-1">
             <aside className="hero__left">
-              <h1 className="text-2xl md:text-4xl 2xl:text-6xl font-bold text-white">
+              <h1 className="text-2xl md:text-5xl 2xl:text-8xl font-bold text-white">
                 Automating conversations. Personalizing interactions. Scaling results.
               </h1>
-              <p className="text-base md:text-lg 2xl:text-2xl pt-4 text-white">
+              <p className="text-base md:text-xl 2xl:text-3xl pt-4 text-white">
                 Notrus goes beyond simple chat automation: we help enterprise companies increase revenue, improve margins, and strengthen customer loyalty with enterprise-grade AI across WhatsApp, Webchat, and Voice.
                 We deliver hyper-personalized conversational intelligence powered by AI specialists, a robust enterprise platform, and a community of leading companies.
               </p>
+              <div className="mx-auto pt-24">
+                <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
+              </div>
             </aside>
             <aside className="hero__right flex justify-center items-center">
-              <Image src={hero} alt="Hero Logo" className="h-[calc(100%-8rem)] min-h-80 w-auto animate-float" />
+              <Image src={hero} alt="Hero Logo" className="w-[calc(100%-12rem)] h-[calc(100%-4rem)] max-w-full max-h-full animate-float" />
             </aside>
-          </div>
-          <div className="container mx-auto py-16">
-            <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
           </div>
         </section>
 
