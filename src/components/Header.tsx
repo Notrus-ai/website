@@ -50,11 +50,11 @@ export default function Header() {
               <Image src={logo} alt="Notrus Logo" width={120} />
             </figure>
 
-            <ul className="hidden md:flex items-center md:gap-4 [&>li>a]:p-4 [&>li.link>a]:hover:bg-white/10 [&>li.link>a]:rounded-xl text-white font-medium">
+            <ul className="group hidden md:flex items-center md:gap-4 [&>li>a]:p-4 [&>li.link>a]:hover:bg-white/10 [&>li.link>a]:rounded-xl text-white font-medium">
               <li className="link"><Link href={getExternalUrl('resources')} className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('header.insights')}</Link></li>
               {/* <li><Link href={getExternalUrl('contact')} className="group-hover:opacity-50 hover:opacity-100! transition-opacity">{t('header.contact')}</Link></li> */}
-              <li><Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button></li>
-              <li><LanguageSwitcher /></li>
+              <li className="group-hover:opacity-50 hover:!opacity-100 transition-opacity"><Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button></li>
+              <li className="group-hover:opacity-50 hover:!opacity-100 transition-opacity"><LanguageSwitcher /></li>
             </ul>
 
             <button

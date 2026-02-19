@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
+import { motion, AnimatePresence } from "motion/react";
 import sphereImage from "@/assets/images/dashboard/sphere.png";
 import orbitImage from "@/assets/images/dashboard/orbit.png";
 import insightsImage from "@/assets/images/dashboard/insights.png";
@@ -64,6 +65,16 @@ function AccordionItem({
   );
 }
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.13 } },
+};
+
 export default function AboutSection() {
   const locale = useLocale() as 'en' | 'pt';
   const t = useTranslations();
@@ -90,7 +101,13 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-12 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="md:w-[70%] lg:w-[60%] mx-auto text-center pb-12 md:pb-16">
+        <motion.div
+          className="md:w-[70%] lg:w-[60%] mx-auto text-center pb-12 md:pb-16"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">
             {t('about.title')}
             <br />
@@ -99,10 +116,16 @@ export default function AboutSection() {
           <p className="text-base md:text-xl 2xl:text-2xl pt-4 text-gray-300">
             {t('about.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="flex flex-col gap-4 lg:w-[35%]">
+        <motion.div
+          className="flex flex-col lg:flex-row gap-8"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div variants={fadeUp} className="flex flex-col gap-4 lg:w-[35%]">
             {accordionItems.map((item) => (
               <AccordionItem
                 key={item.key}
@@ -113,14 +136,28 @@ export default function AboutSection() {
                 onClick={() => setOpenItem(item.key)}
               />
             ))}
-          </div>
+          </motion.div>
 
-          <div className={`flex-1 ${ACCORDIONS_ITEMS[openItem].bgColor} rounded-2xl relative overflow-hidden`}>
-            <figure>
-              <Image src={ACCORDIONS_ITEMS[openItem][locale === 'pt' ? 'imagePT' : 'imageEN']} alt={t(`about.${openItem}.title`)} />
-            </figure>
-          </div>
-        </div>
+          <motion.div
+            variants={fadeUp}
+            className={`flex-1 ${ACCORDIONS_ITEMS[openItem].bgColor} rounded-2xl relative overflow-hidden transition-colors duration-300`}
+          >
+            <AnimatePresence mode="wait">
+              <motion.figure
+                key={openItem}
+                initial={{ opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -24 }}
+                transition={{ duration: 0.35, ease: 'easeInOut' }}
+              >
+                <Image
+                  src={ACCORDIONS_ITEMS[openItem][locale === 'pt' ? 'imagePT' : 'imageEN']}
+                  alt={t(`about.${openItem}.title`)}
+                />
+              </motion.figure>
+            </AnimatePresence>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

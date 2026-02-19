@@ -1,7 +1,8 @@
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { motion } from 'motion/react';
 
 import getNotrus from '@/assets/images/dashboard/get-notrus.png';
 import hero from '@/assets/images/dashboard/hero.png';
@@ -9,10 +10,6 @@ import why1Image from '@/assets/images/dashboard/why-1.png';
 import why2Image from '@/assets/images/dashboard/why-2.png';
 import why3Image from '@/assets/images/dashboard/why-3.png';
 import why4Image from '@/assets/images/dashboard/why-4.png';
-import heroAnimationPT from '@/assets/hero-animation-pt.json';
-import heroAnimationMobilePT from '@/assets/hero-animation-mobile-pt.json';
-import heroAnimationEN from '@/assets/hero-animation-en.json';
-import heroAnimationMobileEN from '@/assets/hero-animation-mobile-en.json';
 
 import useExternalLinks from '@/hooks/useExternalLinks';
 
@@ -32,6 +29,16 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
     }
   };
 }
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] } }, // cubic-bezier for 'easeOut'
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.13 } },
+};
 
 export default function Home() {
   const t = useTranslations();
@@ -96,19 +103,27 @@ export default function Home() {
           <Header />
           <div className="flex items-center container mx-auto md:[&>aside]:flex-1 flex-1">
             <aside className="hero__left">
-              <h1 className="text-2xl md:text-5xl 2xl:text-8xl font-bold text-white">
-                {t('hero.title')}
-              </h1>
-              <p className="text-base md:text-xl 2xl:text-3xl pt-4 text-white">
-                {t('hero.description')}
-              </p>
-              <div className="mx-auto pt-24">
-                <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
-              </div>
+              <motion.div variants={stagger} initial="hidden" animate="visible">
+                <motion.h1 variants={fadeUp} className="text-2xl md:text-5xl 2xl:text-8xl font-bold text-white">
+                  {t('hero.title')}
+                </motion.h1>
+                <motion.p variants={fadeUp} className="text-base md:text-xl 2xl:text-3xl pt-4 text-white">
+                  {t('hero.description')}
+                </motion.p>
+                <motion.div variants={fadeUp} className="mx-auto pt-24">
+                  <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
+                </motion.div>
+              </motion.div>
             </aside>
-            <aside className="hero__right flex justify-center items-center">
+
+            <motion.aside
+              className="hero__right flex justify-center items-center"
+              initial={{ opacity: 0, scale: 0.88 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.35 }}
+            >
               <Image src={hero} alt="Hero Logo" className="w-[calc(100%-12rem)] h-[calc(100%-4rem)] max-w-full max-h-full animate-float" />
-            </aside>
+            </motion.aside>
           </div>
         </section>
 
@@ -116,10 +131,16 @@ export default function Home() {
 
         <section id="why-us" className="py-8 md:py-16">
           <div className="container mx-auto">
-            <div className="md:w-[50%] mx-auto text-center pb-8">
+            <motion.div
+              className="md:w-[50%] mx-auto text-center pb-8"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+            >
               <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">{t('whyUs.title')}</h2>
               <p className="text-base md:text-xl 2xl:text-2xl pt-4 text-gray-300">{t('whyUs.subtitle')}</p>
-            </div>
+            </motion.div>
             <div>
               <Carousel images={WHY_NOTRUS_DATA} renderItem={(item) => <WhyCardItem {...item} />} />
             </div>
@@ -127,45 +148,88 @@ export default function Home() {
         </section>
 
         <section id="results" className="container mx-auto py-8 md:py-24">
-          <div className="md:w-[50%] mx-auto text-center pb-8">
+          <motion.div
+            className="md:w-[50%] mx-auto text-center pb-8"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+          >
             <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">{t('results.title')}</h2>
-          </div>
-          <div className="results-content">
-            <div className="flex flex-col justify-between md:justify-end results-content__area-1 rounded-xl p-4 md:p-8 bg-[url(/images/dashboard/results-1.png)] bg-cover bg-center min-h-[220px]">
-              <h3 className="text-[4rem] font-black">{t('results.revenue.value')}</h3>
-              <h4 className="text-2xl font-bold">{t('results.revenue.title')}</h4>
-              <p>{t('results.revenue.description')}</p>
-            </div>
-            <div className="results-content__area-2 rounded-xl p-4 md:p-8 bg-[url(/images/dashboard/results-2.png)] bg-cover bg-center min-h-[220px]">
-              <h3 className="text-[4rem] font-black">{t('results.csat.value')}</h3>
-              <h4 className="text-2xl font-bold">{t('results.csat.title')}</h4>
-              <p>{t('results.csat.description')}</p>
-            </div>
-            <div className="results-content__area-3 rounded-xl p-4 md:p-8 bg-[url(/images/dashboard/results-3.png)] bg-cover bg-center min-h-[220px]">
-              <h3 className="text-[4rem] font-black">{t('results.costs.value')}</h3>
-              <h4 className="text-2xl font-bold">{t('results.costs.title')}</h4>
-              <p>{t('results.costs.description')}</p>
-            </div>
-          </div>
+          </motion.div>
+          <motion.div
+            className="results-content"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div variants={fadeUp} className="group relative flex flex-col justify-between md:justify-end results-content__area-1 rounded-xl overflow-hidden p-4 md:p-8 min-h-[220px] cursor-default ">
+              <div className="absolute -inset-4 bg-[url(/images/dashboard/results-1.png)] bg-cover bg-center transition-transform duration-500 ease-out group-hover:-translate-x-4" />
+              <div className="relative z-10">
+                <h3 className="text-[4rem] font-black">{t('results.revenue.value')}</h3>
+                <h4 className="text-2xl font-bold">{t('results.revenue.title')}</h4>
+                <p>{t('results.revenue.description')}</p>
+              </div>
+            </motion.div>
+            <motion.div variants={fadeUp} className="group relative results-content__area-2 rounded-xl overflow-hidden p-4 md:p-8 min-h-[220px] cursor-default ">
+              <div className="absolute -inset-4 bg-[url(/images/dashboard/results-2.png)] bg-cover bg-center transition-transform duration-500 ease-out group-hover:-translate-x-4" />
+              <div className="relative z-10">
+                <h3 className="text-[4rem] font-black">{t('results.csat.value')}</h3>
+                <h4 className="text-2xl font-bold">{t('results.csat.title')}</h4>
+                <p>{t('results.csat.description')}</p>
+              </div>
+            </motion.div>
+            <motion.div variants={fadeUp} className="group relative results-content__area-3 rounded-xl overflow-hidden p-4 md:p-8 min-h-[220px] cursor-default ">
+              <div className="absolute -inset-4 bg-[url(/images/dashboard/results-3.png)] bg-cover bg-center transition-transform duration-500 ease-out group-hover:-translate-x-4" />
+              <div className="relative z-10">
+                <h3 className="text-[4rem] font-black">{t('results.costs.value')}</h3>
+                <h4 className="text-2xl font-bold">{t('results.costs.title')}</h4>
+                <p>{t('results.costs.description')}</p>
+              </div>
+            </motion.div>
+          </motion.div>
         </section>
 
         <section id="security" className="container mx-auto">
-          <div className="mt-8 md:mt-16 md:p-16 rounded-xl md:bg-[url(/images/dashboard/security.png)] bg-cover bg-center">
-            <div className="md:w-[43%] text-center md:text-left">
+          <div className="mt-8 md:mt-16 md:p-16 rounded-xl overflow-hidden md:bg-[url(/images/dashboard/security.png)] bg-cover bg-center">
+            <motion.div
+              className="md:w-[43%] text-center md:text-left"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+            >
               <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">{t('security.title')}</h2>
               <p className="text-xl md:text-2xl pt-4 pb-8 md:pb-20">{t('security.subtitle')}</p>
-            </div>
+            </motion.div>
             <div className="lg:hidden">
               <Carousel images={SECURITY_DATA} renderItem={(item: typeof SECURITY_DATA[0]) => <SecurityCard {...item} />} />
             </div>
-            <div className="hidden lg:flex gap-16">
-              {SECURITY_DATA.map((item, index) => (<SecurityCard key={index} {...item} />))}
-            </div>
+            <motion.div
+              className="hidden lg:grid lg:grid-cols-4 gap-8"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {SECURITY_DATA.map((item, index) => (
+                <motion.div key={index} variants={fadeUp}>
+                  <SecurityCard {...item} />
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
         <section id="get-demo" className="container mx-auto">
-          <div className="flex items-center justify-between rounded-xl relative p-4 md:p-16 my-16 md:my-32 bg-cover bg-[radial-gradient(circle_at_top_left,#0066FF,#001a4d)]">
+          <motion.div
+            className="flex items-center justify-between rounded-xl relative p-4 md:p-16 my-16 md:my-32 bg-cover bg-[radial-gradient(circle_at_top_left,#0066FF,#001a4d)]"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <div className="flex-1">
               <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold">{t('getDemo.title')}</h2>
               <p className="text-xl pt-4 pb-16 md:pb-20 md:text-2xl 2xl:text-3xl">{t('getDemo.subtitle')}</p>
@@ -176,7 +240,7 @@ export default function Home() {
             <div className="flex justify-end flex-1 absolute right-4 opacity-25 lg:relative">
               <Image className="w-[170px] md:w-[300px] xl:w-100" src={getNotrus} alt="Notrus Logo" />
             </div>
-          </div>
+          </motion.div>
         </section>
       </main>
       <Footer />
