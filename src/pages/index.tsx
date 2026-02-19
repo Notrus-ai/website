@@ -97,11 +97,10 @@ export default function Home() {
           <div className="flex items-center container mx-auto md:[&>aside]:flex-1 flex-1">
             <aside className="hero__left">
               <h1 className="text-2xl md:text-5xl 2xl:text-8xl font-bold text-white">
-                Automating conversations. Personalizing interactions. Scaling results.
+                {t('hero.title')}
               </h1>
               <p className="text-base md:text-xl 2xl:text-3xl pt-4 text-white">
-                Notrus goes beyond simple chat automation: we help enterprise companies increase revenue, improve margins, and strengthen customer loyalty with enterprise-grade AI across WhatsApp, Webchat, and Voice.
-                We deliver hyper-personalized conversational intelligence powered by AI specialists, a robust enterprise platform, and a community of leading companies.
+                {t('hero.description')}
               </p>
               <div className="mx-auto pt-24">
                 <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
