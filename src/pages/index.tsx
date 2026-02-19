@@ -122,7 +122,7 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.35 }}
             >
-              <Image src={hero} alt="Hero Logo" className="w-[calc(100%-12rem)] h-[calc(100%-4rem)] max-w-full max-h-full animate-float" />
+              <Image src={hero} alt="Hero Logo" className="w-[calc(100%-12rem)] h-[calc(100%-4rem)] max-w-full max-h-full" />
             </motion.aside>
           </div>
         </section>
