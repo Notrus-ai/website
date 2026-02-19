@@ -2,9 +2,9 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { useLottie } from "lottie-react";
 
 import getNotrus from '@/assets/images/dashboard/get-notrus.png';
+import hero from '@/assets/images/dashboard/hero.png';
 import why1Image from '@/assets/images/dashboard/why-1.png';
 import why2Image from '@/assets/images/dashboard/why-2.png';
 import why3Image from '@/assets/images/dashboard/why-3.png';
@@ -34,7 +34,6 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
 }
 
 export default function Home() {
-  const locale = useLocale() as 'en' | 'pt';
   const t = useTranslations();
 
   const WHY_NOTRUS_DATA = [
@@ -82,9 +81,6 @@ export default function Home() {
       description: t('security.items.cybersecurity.description'),
     }
   ];
-  const { View: HeroAnimation } = useLottie({ animationData: locale === 'en' ? heroAnimationEN : heroAnimationPT, loop: true });
-  const { View: HeroAnimationMobile } = useLottie({ animationData: locale === 'en' ? heroAnimationMobileEN : heroAnimationMobilePT, loop: true });
-
   const { getExternalUrl } = useExternalLinks();
   return (
     <>
@@ -95,14 +91,25 @@ export default function Home() {
         <meta name="keywords" content={t('metadata.keywords')} />
       </Head>
 
-      <Header />
-
       <main className="overflow-x-clip">
-        <section id="hero" className="relative container mx-auto">
-          <div className="hidden md:block m-[-20]">{HeroAnimation}</div>
-          <div className="md:hidden m-[-8]">{HeroAnimationMobile}</div>
-          <div className="flex w-full justify-center absolute bottom-8 z-10 md:bottom-8 lg:bottom-16 xl:bottom-24 md:justify-start md:pl-10 lg:pl-16 xl:pl-20 2xl:pl-24">
-            <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
+        <section id="hero" className="relative w-[calc(100%-4rem)] mx-auto bg-[#0066FF] rounded-xl mt-8 py-8">
+          <Header />
+          <div className="flex items-center container mx-auto md:[&>aside]:flex-1 md:py-24">
+            <aside className="hero__left">
+              <h1 className="text-2xl md:text-2xl lg:text-3xl 2xl:text-4xl font-bold text-white">
+                Automating conversations. Personalizing interactions. Scaling results.
+              </h1>
+              <p className="text-base md:text-lg 2xl:text-xl pt-4 text-white">
+                Notrus goes beyond simple chat automation: we help enterprise companies increase revenue, improve margins, and strengthen customer loyalty with enterprise-grade AI across WhatsApp, Webchat, and Voice.
+                We deliver hyper-personalized conversational intelligence powered by AI specialists, a robust enterprise platform, and a community of leading companies.
+              </p>
+              <div className="flex mt-12">
+                <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
+              </div>
+            </aside>
+            <aside className="hero__right flex justify-center items-center">
+              <Image src={hero} alt="Hero Logo" className="h-[calc(100%-8rem)] min-h-80 w-auto animate-float" />
+            </aside>
           </div>
         </section>
 
@@ -167,7 +174,7 @@ export default function Home() {
                 <Button href={getExternalUrl('contact')}>{t('getDemo.cta')}</Button>
               </div>
             </div>
-            <div className="flex justify-end flex-1 absolute right-4 opacity-[25%] lg:relative">
+            <div className="flex justify-end flex-1 absolute right-4 opacity-25 lg:relative">
               <Image className="w-[170px] md:w-[300px] xl:w-100" src={getNotrus} alt="Notrus Logo" />
             </div>
           </div>

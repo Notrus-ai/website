@@ -268,6 +268,13 @@
   --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
   --shadow-glow-lg: 0 0 40px rgba(59, 130, 246, 0.6);
 
+  /* Custom Animations */
+  --animate-float: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
 }
 
 html {
