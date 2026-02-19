@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, Variants } from "motion/react";
 import sphereImage from "@/assets/images/dashboard/sphere.png";
 import orbitImage from "@/assets/images/dashboard/orbit.png";
 import insightsImage from "@/assets/images/dashboard/insights.png";
@@ -65,12 +65,12 @@ function AccordionItem({
   );
 }
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.13 } },
 };
