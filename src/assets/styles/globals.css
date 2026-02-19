@@ -54,12 +54,17 @@
 /* Dark Mode */
 /* @media (prefers-color-scheme: dark) { */
   :root {
-    /* Notrus Brand Colors (adjusted for dark mode) */
-    --notrus-blue-900: #5da3e8;
-    --notrus-blue-800: #4a90d9;
-    --notrus-blue-700: #3a7ac8;
-    --notrus-blue-600: #2d6ab8;
+    /* Notrus Brand Colors — base: #0c1a5a (500) → HSL(229°, 77%, 20%) */
+    --notrus-blue-50:  #edf0fd;
+    --notrus-blue-100: #d2d9f9;
+    --notrus-blue-200: #9cacf2;
+    --notrus-blue-300: #5873e9;
+    --notrus-blue-400: #1a38c2;
     --notrus-blue-500: #0c1a5a;
+    --notrus-blue-600: #091443;
+    --notrus-blue-700: #070e32;
+    --notrus-blue-800: #04091f;
+    --notrus-blue-900: #020512;
     --notrus-teal: #7dd3c0;
     --notrus-cyan: #9fe5d8;
     --notrus-purple: #9d8bff;
@@ -214,11 +219,16 @@
   --color-ring: var(--ring);
 
   /* Notrus brand colors */
-  --color-notrus-blue-900: var(--notrus-blue-900);
-  --color-notrus-blue-800: var(--notrus-blue-800);
-  --color-notrus-blue-700: var(--notrus-blue-700);
-  --color-notrus-blue-600: var(--notrus-blue-600);
+  --color-notrus-blue-50:  var(--notrus-blue-50);
+  --color-notrus-blue-100: var(--notrus-blue-100);
+  --color-notrus-blue-200: var(--notrus-blue-200);
+  --color-notrus-blue-300: var(--notrus-blue-300);
+  --color-notrus-blue-400: var(--notrus-blue-400);
   --color-notrus-blue-500: var(--notrus-blue-500);
+  --color-notrus-blue-600: var(--notrus-blue-600);
+  --color-notrus-blue-700: var(--notrus-blue-700);
+  --color-notrus-blue-800: var(--notrus-blue-800);
+  --color-notrus-blue-900: var(--notrus-blue-900);
   --color-notrus-teal: var(--notrus-teal);
   --color-notrus-cyan: var(--notrus-cyan);
   --color-notrus-purple: var(--notrus-purple);

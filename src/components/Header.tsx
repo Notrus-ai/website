@@ -43,7 +43,7 @@ export default function Header() {
   return (
     <>
       <div className="h-16 shrink-0 w-full">
-        <header className={`left-20 right-20 z-50 flex items-center py-2 transition-[background-color,box-shadow,border-radius,backdrop-filter] duration-300 ${isScrolled ? 'fixed top-4 bg-[#0c1a5a]/60 backdrop-blur-md rounded-2xl shadow-xl' : ''}`}>
+        <header className={`left-4 right-4 sm:left-20 sm:right-20 z-50 flex items-center py-2 transition-[background-color,box-shadow,border-radius,backdrop-filter] duration-300 ${isScrolled ? 'fixed top-4 bg-[#0c1a5a]/60 backdrop-blur-md rounded-2xl shadow-xl' : ''}`}>
         <div className="container mx-auto">
           <div className="flex justify-between items-center">
             <figure>
@@ -74,7 +74,7 @@ export default function Header() {
         onClick={closeDrawer}
       />
 
-      <header
+      <nav
         className={`fixed top-0 right-0 h-full w-[350px] md:w-[calc(100%-5rem)] bg-black/95 backdrop-blur-md z-50 transform transition-transform duration-300 ease-in-out md:hidden ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="flex flex-col h-full p-6">
@@ -105,7 +105,7 @@ export default function Header() {
             <LanguageSwitcher />
           </div>
         </div>
-      </header>
+      </nav>
     </>
   )
 }

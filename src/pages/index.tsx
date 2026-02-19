@@ -92,7 +92,7 @@ export default function Home() {
       </Head>
 
       <main className="overflow-x-clip py-8">
-        <section id="hero" className="flex flex-col relative w-[calc(100%-4rem)] mx-auto hero-bg rounded-xl py-8 h-[calc(100vh-4rem)]">
+        <section id="hero" className="flex flex-col mx-4 relative md:w-[calc(100%-4rem)] sm:mx-auto hero-bg rounded-xl py-8 h-[calc(100vh-4rem)]">
           <Header />
           <div className="flex items-center container mx-auto md:[&>aside]:flex-1 flex-1">
             <aside className="hero__left">
