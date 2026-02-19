@@ -42,7 +42,8 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-12 left-20 right-20 z-50 flex items-center py-2 transition-[background-color,box-shadow,border-radius,backdrop-filter,top] duration-300 ${isScrolled ? '!top-4 bg-[#0c1a5a]/60 backdrop-blur-md rounded-2xl shadow-xl' : ''}`}>
+      <div className="h-16 shrink-0 w-full">
+        <header className={`left-20 right-20 z-50 flex items-center py-2 transition-[background-color,box-shadow,border-radius,backdrop-filter] duration-300 ${isScrolled ? 'fixed top-4 bg-[#0c1a5a]/60 backdrop-blur-md rounded-2xl shadow-xl' : ''}`}>
         <div className="container mx-auto">
           <div className="flex justify-between items-center">
             <figure>
@@ -66,6 +67,7 @@ export default function Header() {
           </div>
         </div>
       </header>
+      </div>
 
       <div
         className={`fixed inset-0 bg-black/60 z-40 transition-opacity duration-300 md:hidden ${isDrawerOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
