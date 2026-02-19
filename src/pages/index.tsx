@@ -32,7 +32,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] } }, // cubic-bezier for 'easeOut'
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] as const } },
 };
 
 const stagger = {
