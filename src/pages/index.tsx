@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 
 import getNotrus from '@/assets/images/dashboard/get-notrus.png';
-import hero from '@/assets/images/dashboard/hero.png';
 import why1Image from '@/assets/images/dashboard/why-1.png';
 import why2Image from '@/assets/images/dashboard/why-2.png';
 import why3Image from '@/assets/images/dashboard/why-3.png';
@@ -99,9 +98,9 @@ export default function Home() {
       </Head>
 
       <main className="overflow-x-clip py-8">
-        <section id="hero" className="flex flex-col mx-4 relative md:w-[calc(100%-4rem)] sm:mx-auto hero-bg rounded-xl py-8 h-[calc(100vh-4rem)]">
+        <section id="hero" className="flex flex-col mx-4 relative md:w-[calc(100%-4rem)] sm:mx-auto hero-bg rounded-xl pb-8 sm:pt-8 h-[calc(100vh-4rem)]">
           <Header />
-          <div className="flex items-center container mx-auto md:[&>aside]:flex-1 flex-1">
+          <div className="flex items-end sm:items-center container mx-auto md:[&>aside]:flex-1 flex-1">
             <aside className="hero__left">
               <motion.div variants={stagger} initial="hidden" animate="visible">
                 <motion.h1 variants={fadeUp} className="text-2xl md:text-5xl 2xl:text-8xl font-bold text-white">
@@ -110,20 +109,13 @@ export default function Home() {
                 <motion.p variants={fadeUp} className="text-base md:text-xl 2xl:text-3xl pt-4 text-white">
                   {t('hero.description')}
                 </motion.p>
-                <motion.div variants={fadeUp} className="mx-auto pt-24">
+                <motion.div variants={fadeUp} className="flex justify-center sm:justify-start mx-auto pt-8 sm:pt-24">
                   <Button href={getExternalUrl('contact')}>{t('hero.cta')}</Button>
                 </motion.div>
               </motion.div>
             </aside>
 
-            <motion.aside
-              className="hero__right flex justify-center items-center"
-              initial={{ opacity: 0, scale: 0.88 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.35 }}
-            >
-              <Image src={hero} alt="Hero Logo" className="w-[calc(100%-12rem)] h-[calc(100%-4rem)] max-w-full max-h-full" />
-            </motion.aside>
+            <aside className="hero__right" />
           </div>
         </section>
 
