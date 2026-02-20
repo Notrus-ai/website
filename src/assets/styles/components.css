@@ -3,7 +3,7 @@
 .hero-bg {
   @apply bg-cover;
   background-image: url('/images/dashboard/hero-bg.png');
-  background-position: calc(100% + 250px) center;
+  background-position: calc(75%) center;
 }
 
 @media (min-width: 640px) {
