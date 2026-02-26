@@ -97,8 +97,8 @@ export default function Home() {
         <meta name="keywords" content={t('metadata.keywords')} />
       </Head>
 
-      <main className="overflow-x-clip py-8">
-        <section id="hero" className="flex flex-col mx-4 relative md:w-[calc(100%-4rem)] sm:mx-auto hero-bg rounded-xl pb-8 sm:pt-8 h-[calc(100vh-4rem)]">
+      <main className="overflow-x-clip">
+        <section id="hero" className="flex flex-col relative hero-bg pb-8 sm:pt-8 h-screen">
           <Header />
           <div className="flex items-end sm:items-center container mx-auto md:[&>aside]:flex-1 flex-1">
             <aside className="hero__left">
@@ -114,7 +114,6 @@ export default function Home() {
                 </motion.div>
               </motion.div>
             </aside>
-
             <aside className="hero__right" />
           </div>
         </section>

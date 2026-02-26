@@ -19,7 +19,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 16);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -43,7 +43,7 @@ export default function Header() {
   return (
     <>
       <div className="h-16 shrink-0 w-full">
-        <header className={`left-4 right-4 sm:left-20 sm:right-20 z-50 flex items-center sm:py-2 transition-[background-color,box-shadow,border-radius,backdrop-filter] duration-300 ${isScrolled ? 'fixed top-2 bg-[#0c1a5a]/60 backdrop-blur-md rounded-2xl shadow-xl' : ''}`}>
+        <header className={`w-full sm:w-auto sm:left-20 sm:right-20 z-50 flex items-center sm:py-2 transition-[background-color,box-shadow,border-radius,backdrop-filter] duration-300 ${isScrolled ? 'fixed sm:top-4 bg-notrus-tangaroa/80 backdrop-blur-md sm:rounded-2xl shadow-xl' : ''}`}>
         <div className="container mx-auto">
           <div className="flex justify-between items-center">
             <figure>
